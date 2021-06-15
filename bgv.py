@@ -7,19 +7,18 @@ import wikipedia
 import webbrowser
 import os 
 import time
-from pyautogui import click
+from pyautogui import click, keyDown, keyUp
 from keyboard import press,write
 from time import sleep
 import eel
 eel.init("project")
 
 
-
 warnings.filterwarnings("ignore")
 
 engine = pyttsx3.init("sapi5")
 voices = engine.getProperty('voices')
-engine.setProperty('voice',voices[1].id)  #changing index , changes voices, 1 for female
+engine.setProperty('voice',voices[1].id)  #changing index , changes voices, 1 for female and 0 for male
 
 def talk(audio):
     engine.say(audio)
@@ -66,31 +65,21 @@ def WhatsappMsg(name,message):
     buttonpoint = pyautogui.center(buttonlocation)
     buttonx, buttony = buttonpoint
     click(buttonx,buttony)
-
     sleep(1)
 
     write(name)
-
     sleep(2)
     
     buttony+=150
     click(buttonx,buttony)
-    
     sleep(0.5)
 
-    butlocation = pyautogui.locateOnScreen('newss.png')
-    butpoint = pyautogui.center(butlocation)
-    butx, buty = butpoint
-    click(butx,buty)
+    keyDown('shift')
+    write(message[0])
+    keyUp('shift')
+    write(message[1:])
     
-
-    sleep(0.5)
-
-    write(message)
-
     press('enter')
-
-
 
 def WhatsappChat(name):
 
@@ -112,19 +101,10 @@ def WhatsappChat(name):
     buttony+=150
     click(buttonx,buttony)
 
-    sleep(0.5)
-
-    butlocation = pyautogui.locateOnScreen('msg.png')
-    butpoint = pyautogui.center(butlocation)
-    butx, buty = butpoint
-    click(butx,buty)
-    
-    sleep(0.5)
-
-
 @eel.expose
 def trail():
-    talk("Hello this is Vaibhav Assistant , the virtual assisstant")
+    eel.addText("Hello this is Vaibhav Assistant , the voice assisstant")
+    talk("Hello this is Vaibhav Assistant , the voice assisstant")
     while True:
         text = get_audio()
         speak = " "
@@ -245,8 +225,10 @@ def trail():
         elif "goodbye" in text or "bye" in text or "quit" in text or "exit" in text:
             talk("Terminating Vaibhav Assistant")
             break 
-        talk(speak)
+        
         eel.addText("Vaibhav Assistant : "+speak)
+        talk(speak)
+        
 
 
 eel.start("project.html",size=(500, 500))
