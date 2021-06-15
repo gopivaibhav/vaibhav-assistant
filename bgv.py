@@ -4,7 +4,6 @@ import pyttsx3
 import speech_recognition as sr
 import datetime
 import wikipedia
-import random
 import webbrowser
 import os 
 import time

@@ -1,0 +1,42 @@
+.voice{
+    display: flex;
+    padding: 20px;
+}
+.listen,.terminate{
+    padding: 10px;
+}
+button{
+    cursor: pointer;
+    padding: 10px;
+    background-color: black;
+    color: gold;
+    border-radius: 5px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: 700;
+}
+button:hover{
+    background-color: gold;
+    color: black;
+    border-radius: 5px;
+}
+.show{
+    display: flex;
+    justify-content: space-around;
+}
+.half{
+    height: 50%;
+    padding: 20px;
+}
+
+
+@media screen and (max-width:600px){
+    div.half{
+        padding: 20%;
+    }
+}
+
+#text{
+    font-family:Arial, Helvetica, sans-serif;
+    padding-top: 10px;
+    padding-left: 10px;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="./project.css" rel="stylesheet">
+    <script type="text/javascript" src="eel.js"></script>
+    <script>
+        function news(){
+            eel.trail()
+        }
+
+        function endit(){
+            eel.hehe()
+        }
+
+        function addText(msg){
+            var data=document.getElementById("content");
+            data.innerHTML+="<br>"+msg;
+        }
+        eel.expose(addText);
+    </script>
+    
+    <title>GUI</title>
+</head>
+<body>
+    <div class="half">
+        <div class="show">
+            <button onclick="news()">Listen</button>
+            <button onclick="endit()">Terminate</button>
+        </div>
+    </div>
+    <div id="text">
+        <p>Text will appear here:</p>
+        <div id="content"></div>
+    </div>
+</body>
+</html>
