@@ -1,42 +1,64 @@
-.voice{
-    display: flex;
-    padding: 20px;
-}
-.listen,.terminate{
-    padding: 10px;
-}
 button{
     cursor: pointer;
-    padding: 10px;
-    background-color: black;
-    color: gold;
-    border-radius: 5px;
-    font-family:Arial, Helvetica, sans-serif;
-    font-weight: 700;
+    padding: 15px;
+    background-color: azure;
+    color: black;
+    border-radius: 25px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: 900;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 button:hover{
-    background-color: gold;
-    color: black;
-    border-radius: 5px;
+    background-color:cyan;
 }
 .show{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
 }
 .half{
     height: 50%;
-    padding: 20px;
+    padding: 15%;
+    padding-top: 100px;
+    padding-bottom: 300px;
+    margin-bottom: 4%;
 }
 
 
 @media screen and (max-width:600px){
-    div.half{
-        padding: 20%;
+    .half{
+        padding-top: 100px;
+        padding-bottom: 300px; 
+        margin-bottom: 4%;
+    }
+    button{
+        padding: 3%;
     }
 }
 
 #text{
     font-family:Arial, Helvetica, sans-serif;
-    padding-top: 10px;
-    padding-left: 10px;
+    padding: 5%;
+    margin: 5%;
+    margin-top: 0%;
+    padding-bottom: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+p{
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.half{
+    background-image: url("voice.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;    
+}
+
+img{
+    width: 15px;
+    align-items: center;
+}
+
