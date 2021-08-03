@@ -7,7 +7,7 @@ import wikipedia
 import webbrowser
 import time
 import requests
-from pyautogui import click, keyDown, keyUp
+from pyautogui import click
 from keyboard import press,write
 from time import sleep
 from googletrans import Translator
@@ -204,15 +204,50 @@ def trail():
             results = wiki(text)
             speak =results
                     
-    
-        elif "who are you" in text:
+        elif "hello" in text or "hai" in text or "hey" in text:
+            speak="Hello, Nice to hear your voice"
+
+        elif "who are you" in text or "who created you" in text:
             speak = "Hello, I am Vaibhav Assistant, created by Gopi Vaibhav"
             
         elif "your name" in text:
             speak = "This is Vaibhav Assistant."
-    
+
+        elif "good morning" in text:
+            speak="Good Morning, Have a nice day"
+
+        elif "good afternoon" in text:
+            speak="Good Afternoon, How are you?"
+        
+        elif "good evening" in text:
+            speak="Good Evening, I hope you enjoyed your day"
+        
+        elif "good night" in text:
+            speak="Good Night, I will be waiting for you"
+
         elif "who am i" in text:
             speak = "You are a Human"
+        
+        elif "where are you" in text:
+            speak = "I am in your PC"
+        
+        elif "what are you doing" in text:
+            speak = "I am waiting to help you"
+        
+        elif "what can you do" in text:
+            speak = "I can do many things, Checkout my manual"
+
+        elif "old are you" in text:
+            speak = "I am 1 month old"
+        
+        elif "i love you" in text:
+            speak = "Thanks, I love you too"
+
+        elif "robot" in text:
+            speak = "Yes, I am a robot"
+
+        elif "my name" in text:
+            speak = "I am really sorry, I dont remember your name"
             
         elif "why are you here" in text or "why did you come" in text:
             speak = "Because you activated me."
@@ -222,7 +257,7 @@ def trail():
             speak += "\nWhat about you?"
                     
         elif "i am good" in text or "i am fine" in text or "i am nice" in text:
-            speak  ="cool , How can i help for you"
+            speak  ="cool , How can i help you"
             
         elif "open" in text.lower():                
             if "whatsapp" in text.lower():
