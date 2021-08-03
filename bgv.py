@@ -12,7 +12,6 @@ from keyboard import press,write
 from time import sleep
 from googletrans import Translator
 from PyDictionary import PyDictionary
-import speedtest
 import eel
 import random
 import os
@@ -146,18 +145,6 @@ def wiki(text):
     results = wikipedia.summary(text , sentences=3)
     return results
 
-def SpeedTest():
-    talk("Checking speed")
-    st = speedtest.Speedtest()
-    st.get_best_server()
-    downloding = st.download()
-    correctDown = downloding/800000
-    uploading = st.upload()
-    correctUp = uploading/800000
-    eel.addText("Downloading Speed : "+str(correctDown)[:5]+" MB")
-    eel.addText("Uploading Speed : "+str(correctUp)[:5]+" MB")
-    return "Here are the results of your internet speed"
-
 def WhatsappMsg(name,message):
      
     webbrowser.open("https://web.whatsapp.com/")
@@ -290,9 +277,6 @@ def trail():
             else:
                 speak=trans_telugu()
         
-        elif "speed" in text:
-            speak=SpeedTest()
-        
         elif "meaning" in text:
             dictionary=PyDictionary()
             l=text.split(' of ')
@@ -333,6 +317,19 @@ def trail():
             else:
                 talk("Shutting down PC")
                 os.system("shutdown /s /t 1")
+        
+        elif "restart" in text:
+            eel.addText("Vaibhav Assistant : Would you like to restart PC?")
+            talk("Would you like to restart PC")
+            restart = get_audio()
+  
+            if restart == 'no':
+                eel.addText("Vaibhav Assistant : Request Cancelled")
+                talk("request cancelled")
+                exit()
+            else:
+                talk("Shutting down PC")
+                os.system("shutdown /r /t 1")
 
         elif "whatsapp" in text :
             if "message" in text:
