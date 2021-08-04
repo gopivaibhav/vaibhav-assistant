@@ -155,7 +155,6 @@ def WhatsappMsg(name,message):
     buttonpoint = pyautogui.center(buttonlocation)
     buttonx, buttony = buttonpoint
     click(buttonx,buttony)
-    sleep(1)
 
     write(name)
     sleep(2)
@@ -172,14 +171,13 @@ def WhatsappChat(name):
 
     webbrowser.open("https://web.whatsapp.com/")
 
-    sleep(10)
+    sleep(15)
 
     buttonlocation = pyautogui.locateOnScreen('search.png')
     buttonpoint = pyautogui.center(buttonlocation)
     buttonx, buttony = buttonpoint
     click(buttonx,buttony)
 
-    sleep(1)
 
     write(name)
 
