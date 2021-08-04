@@ -315,24 +315,24 @@ def trail():
             l=text.split(' of ')
             meaningword=l[1]
             out = dictionary.meaning(meaningword)
-            eel.addText("Vaibhav Assistant : Meaning of "+l[1]+" is "+str(out))
-            talk("Meaning of "+l[1]+" is "+str(out))
+            speak="Meaning of "+l[1]+" is "+str(out)
+            
 
         elif "synonym" in text:
             dictionary=PyDictionary()
             l=text.split(' of ')
             synonymword=l[1]
             out = dictionary.synonym(synonymword)
-            eel.addText("Vaibhav Assistant : Synonyms of "+l[1]+" are "+str(out))
-            talk("Synonyms of "+l[1]+" are "+str(out))
+            speak="Synonyms of "+l[1]+" are "+str(out)
+            
 
         elif "antonym" in text:
             dictionary=PyDictionary()
             l=text.split(' of ')
             antonymword=l[1]
             out = dictionary.antonym(antonymword)
-            eel.addText("Vaibhav Assistant :  Antonyms of "+l[1]+" are "+str(out))
-            talk("Antonyms of "+l[1]+" are "+str(out))
+            speak="Antonyms of "+l[1]+" are "+str(out)
+            
 
         elif "toss" in text or "flip" in text:
             speak=coin_toss()
